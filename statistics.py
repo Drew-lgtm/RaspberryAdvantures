@@ -48,7 +48,7 @@ def median_grouped(data, interval=1):
     l1 = l2 = n//2
     while (l1 > 0) and (data[l1 - 1] == x):
         l1 -= 1
-    while (l2 < n) and (data[l2 + 1] == x):
+    while (l2 < n - 1) and (data[l2 + 1] == x):
         l2 += 1
     return L + (interval*(n/2 - l1)/(l2 - l1 + 1))
         
@@ -57,7 +57,7 @@ def mode(data):
         data = list(data)
     data = sorted(data)
     last = modev = None
-    countmax = i = 0
+    countmax = count = i = 0
     while i < len(data):
         if data[i] == last:
             count += 1
