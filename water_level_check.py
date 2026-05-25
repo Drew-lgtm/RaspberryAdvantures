@@ -10,9 +10,9 @@ wlan.active(True)
 wlan.connect(secrets.SSID, secrets.PASSWORD)
 time.sleep(5)
 print(wlan.isconnected())
-readings = []
 try:
    while True:
+       readings = []
        for i in range(5):
            reading = sensor.read_u16()
            readings.append(reading)
